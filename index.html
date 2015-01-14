@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styleRest.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div ng-app="Breader" ng-controller="HomePageController">
+
+	<div class="bar">
+		<select ng-model="SelectedCategory" ng-change="LoadData()">
+			<option value="web+design" selected>Web Design</option>
+			<option value="ui%2Fux">UI/UX</option>
+			<option value="web+development">Web Development</option>
+		</select>
+
+	</div>
+
+	<div class="grid">
+		<div class="item"  ng-repeat="p in pics">
+			<a href="{{p.url}}" target="_blank"><img ng-src="{{p.covers.202}}" /></a>
+			<p> {{p.name}}</p>
+			<p>Views:{{p.stats.views}}</p>
+			<p>Appreciations: {{p.stats.appreciations}}</p>
+			<p>Comments{{p.stats.comments}}</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+
